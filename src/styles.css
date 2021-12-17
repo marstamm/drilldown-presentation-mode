@@ -1,11 +1,15 @@
 @keyframes fadeOut {
   0% {
-    opacity: 1;
+    transform: scale(1);
+  }
+  2% {
+    transform: scale(0);  
   }
   100% {
-    opacity: 0;
+    transform: scale(0.5);  
   }
 }
+
 
 @keyframes fadeIn {
   0% {
@@ -18,6 +22,7 @@
 
 .fadeOut {
   animation: fadeOut var(--animation-length);
+  -webkit-animation: fadeOut var(--animation-length);
   opacity: 0;
 }
 
@@ -44,16 +49,16 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(25);
+    transform: scale(30);
     opacity: 1;
   }
   100% {
-    transform: scale(25);
+    transform: scale(30);
     opacity: 0;
   }
 }
 
-.reverse {
+.reverse * {
   animation-direction: reverse !important;
 }
 
@@ -69,3 +74,27 @@
 .animating .djs-overlay-container {
   display: none;
 }
+
+.reverse .transformCenter text {
+  opacity: 1;
+  transition: opacity calc(var(--animation-length) * 0.25);
+  transition-delay: calc(var(--animation-length) * 0.75);
+}
+
+.transformCenter text {
+  opacity: 0;
+  transition: opacity calc(var(--animation-length) * 0.25);
+}
+
+.presentationToggle {  
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30 !important;
+  color: grey;
+}
+
+.presenting .presentationToggle {
+  display: block;
+  color: #67e967;
+} 
