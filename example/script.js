@@ -6,13 +6,22 @@ import "bpmn-js/dist/assets/bpmn-font/css/bpmn.css";
 
 import exampleXml from './example.bpmn.js';
 
+import PresentationMode from '../src/index.js';
+
+// import NyanModule from 'bpmn-js-nyan';
+
+
 (async function() {
   // create a modeler
   const modeler = new Modeler({ 
     container: '#canvas',
     keyboard: {
       bindTo: document
-    }
+    },
+    additionalModules: [
+      PresentationMode,
+      // NyanModule
+    ]
    });
 
   // import diagram
