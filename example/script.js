@@ -20,6 +20,7 @@ import PresentationMode from '../src/index.js';
     },
     additionalModules: [
       PresentationMode,
+      
       // NyanModule
     ]
    });
